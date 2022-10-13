@@ -9,8 +9,7 @@ pipeline{
         stage('ssh'){
             steps{
                 sshagent(['ssh-remote']) {
-                    sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 13.250.64.77 touch text.txt'
-                    sh 'touch text2.text'
+                    sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 13.250.64.77 touch text.txt\ touch text2.text'
                 }
             }
         }
