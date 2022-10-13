@@ -11,9 +11,8 @@ pipeline{
                 sshagent(['ssh-remote']) {
                      sh '''
                         ssh -o StrictHostKeyChecking=no -l ubuntu 13.250.64.77 
-                        eval "$(ssh-agent -s)"
-                        ssh-add /home/.ssh/trung
-                        git clone git@github.com:DangTrung24hdev/golang-200lab.git
+                        touch 2.txt
+                        touch 3.txt
                      '''
                 }
             }
