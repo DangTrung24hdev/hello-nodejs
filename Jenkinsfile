@@ -9,11 +9,7 @@ pipeline{
         stage('ssh'){
             steps{
                 sshagent(['ssh-remote']) {
-                     sh '''
-                        ssh -o StrictHostKeyChecking=no -l ubuntu 13.250.64.77 
-                        touch 2.txt
-                        touch 3.txt
-                     '''
+                    sh "ssh -o StrictHostKeyChecking=no -l ubuntu 13.250.64.77 'eval $(ssh-agent);ssh-add ~/.ssh/trung; git clone https://github.com/DangTrung24hdev/hello-nodejs.git'"
                 }
             }
         }
